@@ -9,3 +9,4 @@ anchor_mode = 0
 
 [node name="Player" parent="." instance=ExtResource("1_wrppp")]
 position = Vector2(146, 78)
+speed = 200.0
