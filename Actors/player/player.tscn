@@ -171,7 +171,6 @@ initial_state = NodePath("Ground")
 animation_player = NodePath("../AnimationPlayer")
 
 [node name="Ground" parent="StateMachine" instance=ExtResource("3_q6hhd")]
-can_move = true
 
 [node name="MovementComponent" parent="." node_paths=PackedStringArray("velocity_component") instance=ExtResource("4_sqth6")]
 velocity_component = NodePath("../VelocityComponent")
