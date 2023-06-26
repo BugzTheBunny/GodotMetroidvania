@@ -1,6 +1,9 @@
 extends Node
 class_name PlayerMovementComponent
 
+signal sig_jump
+signal sig_double_jump
+
 @export var velocity_component : VelocityComponent
 @export var gravity : float = 30
 @export var jump_velocity : float = 600
@@ -47,10 +50,12 @@ func handle_movement(delta):
 func handle_double_jump():
 	if !is_double_jumped and Input.is_action_just_pressed("jump") and !owner.is_on_floor():
 		is_double_jumped = true
+		sig_double_jump.emit()
 		owner.velocity.y =- jump_velocity
 
 func handle_jump():
 	if Input.is_action_just_pressed("jump") and owner.is_on_floor():
+		sig_jump.emit()
 		owner.velocity.y =- jump_velocity
 
 func handle_gravity():
